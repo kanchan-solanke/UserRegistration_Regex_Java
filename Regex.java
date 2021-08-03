@@ -20,14 +20,6 @@ public class Regex {
             System.out.println("Name is invalid");
         }
     }
-    // For Last Name
-
-//        System.out.println("Enter a Last Name: ");
-//        String lname = sc.nextLine();
-//        System.out.println("Last Name is: "+ lname);
-//        Pattern pattern1 = Pattern.compile("")
-//
-
 
     public static void main(String[] args) {
         AddFirstName();
