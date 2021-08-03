@@ -3,19 +3,33 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Regex {
-    public static void main(String[] args) {
+
+    // For First Name
+    public static void AddFirstName() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a First Name:");
         String name = sc.nextLine();
-        System.out.println("First Name is : "+ name);
+        System.out.println("First Name is : " + name);
         Pattern pattern = Pattern.compile("^([A-Z]{1})([a-z]{2,})$");
         Matcher matcher = pattern.matcher(name);
         boolean MatchFound = matcher.matches();
 
-        if(MatchFound){
+        if (MatchFound) {
             System.out.println("Name is Valid");
-        }
-        else
+        } else {
             System.out.println("Name is invalid");
+        }
+    }
+    // For Last Name
+
+//        System.out.println("Enter a Last Name: ");
+//        String lname = sc.nextLine();
+//        System.out.println("Last Name is: "+ lname);
+//        Pattern pattern1 = Pattern.compile("")
+//
+
+
+    public static void main(String[] args) {
+        AddFirstName();
     }
 }
