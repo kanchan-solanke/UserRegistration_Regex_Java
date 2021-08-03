@@ -116,6 +116,22 @@ public class Regex {
             System.out.println("Password is Invalid");
         }
     }
+    public static void ValidPasswordonespecialChar(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a password: ");
+        String password = sc.nextLine();
+        System.out.println("Password is: "+password);
+        Pattern pattern = Pattern.compile("^(.*[A-Z]{1,}.*[0-9]{1,}.*[~!@#$%^&*]?[A-Za-z0-9]{5,})$");
+        Matcher matcher = pattern.matcher(password);
+        boolean MatchFound = matcher.matches();
+
+        if(MatchFound){
+            System.out.println("Password is Valid");
+        }
+        else {
+            System.out.println("Password is Invalid");
+        }
+    }
     public static void main(String[] args) {
         AddFirstName();
         AddLastName();
@@ -124,5 +140,6 @@ public class Regex {
         ValidPassword();
         ValidPasswordatleastoneUpperCase();
         ValidPasswordatleastOneNumericNum();
+        ValidPasswordonespecialChar();
     }
 }
