@@ -27,7 +27,7 @@ public class Regex {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a Last Name: ");
         String name = sc.nextLine();
-        System.out.println("Last Name is: "+name);
+        System.out.println("Last Name is: " + name);
         Pattern pattern = Pattern.compile("^([A-Z]{1})([a-z A-Z]{2,})$");
         Matcher matcher = pattern.matcher(name);
         boolean MatchFound = matcher.matches();
@@ -38,8 +38,23 @@ public class Regex {
         }
     }
 
+    public static void ValidEmail() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter an email");
+        String email = sc.nextLine();
+        System.out.println("Email is: " + email);
+        Pattern pattern = Pattern.compile("^[a-zA-Z0-9.+_-]+[@][a-zA-Z0-9]+[.]co(m|.in)$");
+        Matcher matcher = pattern.matcher(email);
+        boolean MatchFound = matcher.matches();
+        if (MatchFound) {
+            System.out.println("Email is Valid");
+        } else
+            System.out.println("Email is Invalid");
+    }
+
     public static void main(String[] args) {
         AddFirstName();
         AddLastName();
+        ValidEmail();
     }
 }
