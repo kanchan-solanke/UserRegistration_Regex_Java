@@ -88,11 +88,28 @@ public class Regex {
         System.out.println("Enter a password: " );
         String password = sc.nextLine();
         System.out.println("Password is: ");
-        Pattern pattern = Pattern.compile("^([a-zA-Z0-9-@#$&]{7}) +(.*[A-Z]{1,})$");
+        Pattern pattern = Pattern.compile("^[A-Z]{1}[0-9]{1,}+[A-Za-z0-9]{6,}$");
         Matcher matcher = pattern.matcher(password);
         boolean MathFound = matcher.matches();
 
         if(MathFound){
+            System.out.println("Password is Valid");
+        }
+        else {
+            System.out.println("Password is Invalid");
+        }
+    }
+
+    public static void ValidPasswordatleastOneNumericNum(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a password: ");
+        String password = sc.nextLine();
+        System.out.println("Password is: ");
+        Pattern pattern = Pattern.compile("^([A-Z]{1})+([0-9]{1,})+([A-Za-z0-9]{6,})$");
+        Matcher matcher = pattern.matcher(password);
+        boolean MatchFound = matcher.matches();
+
+        if(MatchFound){
             System.out.println("Password is Valid");
         }
         else {
@@ -106,5 +123,6 @@ public class Regex {
         ValidMobileNum();
         ValidPassword();
         ValidPasswordatleastoneUpperCase();
+        ValidPasswordatleastOneNumericNum();
     }
 }
