@@ -65,7 +65,22 @@ public class Regex {
         } else {
             System.out.println("Mobile Number is Invalid");
         }
+    }
 
+    public static void ValidPassword(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a password: ");
+        String password = sc.nextLine();
+        Pattern pattern  = Pattern.compile("^[a-zA-Z0-9-@#$]{8,}$");
+        Matcher matcher = pattern.matcher(password);
+        boolean MatchFound = matcher.matches();
+
+        if(MatchFound){
+            System.out.println("Password is Valid");
+        }
+        else{
+            System.out.println("Password is Invalid");
+        }
     }
 
     public static void main(String[] args) {
@@ -73,5 +88,6 @@ public class Regex {
         AddLastName();
         ValidEmail();
         ValidMobileNum();
+        ValidPassword();
     }
 }
